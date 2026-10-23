@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telstar Farms Mastiffs — English Mastiff Breeding Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: { light: '#4A7A4A', DEFAULT: '#2D4A2D', dark: '#1E3320' },
+              cream: { light: '#FAF8F3', DEFAULT: '#F5F0E8', dark: '#EDE5D8' },
+              tan: { light: '#D4BFA0', DEFAULT: '#C4A882', dark: '#A8895E' },
+              chocolate: { light: '#5A4536', DEFAULT: '#3D2B1F', dark: '#2A1D14' },
+              gold: { light: '#E4C06A', DEFAULT: '#D4A843', dark: '#B8912E' },
+            },
+            fontFamily: {
+              display: ['Playfair Display', 'Georgia', 'serif'],
+              body: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --forest: #2D4A2D;
+        --forest-light: #4A7A4A;
+        --cream: #F5F0E8;
+        --cream-light: #FAF8F3;
+        --cream-dark: #EDE5D8;
+        --tan: #C4A882;
+        --tan-light: #D4BFA0;
+        --chocolate: #3D2B1F;
+        --chocolate-light: #5A4536;
+        --gold: #D4A843;
+        --gold-light: #E4C06A;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        color: var(--chocolate);
+        background: var(--cream-light);
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: 'Playfair Display', Georgia, serif;
+      }
+
+      .paw-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 24px 0;
+        opacity: 0.35;
+      }
+
+      .paw-print {
+        width: 20px;
+        height: 20px;
+        position: relative;
+      }
+
+      .paw-print::before {
+        content: '🐾';
+        font-size: 18px;
+      }
+
+      .gold-line {
+        width: 60px;
+        height: 3px;
+        background: var(--gold);
+        border-radius: 2px;
+        margin-top: 8px;
+      }
+
+      .hero-texture {
+        background:
+          radial-gradient(ellipse at 20% 50%, rgba(212, 168, 67, 0.08) 0%, transparent 50%),
+          radial-gradient(ellipse at 80% 20%, rgba(74, 122, 74, 0.06) 0%, transparent 40%),
+          radial-gradient(ellipse at 60% 80%, rgba(196, 168, 130, 0.1) 0%, transparent 50%),
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 40px,
+            rgba(61, 43, 31, 0.015) 40px,
+            rgba(61, 43, 31, 0.015) 80px
+          ),
+          linear-gradient(160deg, #2D4A2D 0%, #3D2B1F 40%, #2A1D14 100%);
+      }
+
+      .mastiff-silhouette {
+        width: 180px;
+        height: 140px;
+        opacity: 0.12;
+      }
+
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(61, 43, 31, 0.15);
+      }
+
+      .btn-primary {
+        background: var(--forest);
+        color: var(--gold-light);
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .btn-primary:hover {
+        background: var(--forest-light);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(45, 74, 45, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--cream);
+        padding: 14px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        border: 2px solid var(--tan);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(196, 168, 130, 0.15);
+        border-color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      .status-available {
+        background: #22c55e;
+        color: white;
+      }
+
+      .status-reserved {
+        background: var(--gold);
+        color: var(--chocolate);
+      }
+
+      .status-sold {
+        background: #9ca3af;
+        color: white;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+      }
+
+      .faq-answer.open {
+        max-height: 600px;
+      }
+
+      .faq-chevron {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-chevron.open {
+        transform: rotate(180deg);
+      }
+
+      .filter-btn.active {
+        background: var(--forest);
+        color: var(--cream);
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: 24px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, var(--gold), var(--tan), var(--forest));
+        border-radius: 2px;
+      }
+
+      @media (min-width: 768px) {
+        .timeline-line {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .sticky-header {
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .sticky-header.scrolled {
+        background: rgba(45, 74, 45, 0.97);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      #back-to-top {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      #back-to-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      input:focus, textarea:focus, select:focus {
+        outline: none;
+        border-color: var(--forest);
+        box-shadow: 0 0 0 3px rgba(45, 74, 45, 0.15);
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid var(--cream-dark);
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        background: white;
+        color: var(--chocolate);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      @media (max-width: 767px) {
+        .hero-btns { flex-direction: column; width: 100%; }
+        .hero-btns a { width: 100%; justify-content: center; text-align: center; }
+      }
+    </style>
+</head>
+<body data-id="0">
+    <app-icon data-id="1" hidden data-icon="heart" data-palette="Earth"></app-icon>
+
+    <!-- STICKY HEADER / NAV -->
+    <header data-id="2" id="main-header-hdr1" class="sticky-header fixed top-0 left-0 right-0 z-50 bg-forest/90 backdrop-blur-sm">
+        <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-18">
+            <a data-id="4" href="#hero" class="flex items-center gap-2 text-cream no-underline">
+                <svg data-id="5" width="32" height="32" viewBox="0 0 32 32" fill="none" class="flex-shrink-0">
+                    <circle data-id="6" cx="16" cy="16" r="15" stroke="#D4A843" stroke-width="2" fill="none"/>
+                    <text data-id="7" x="16" y="21" text-anchor="middle" fill="#D4A843" font-family="Playfair Display, serif" font-size="14" font-weight="700">K's</text>
+                </svg>
+                <span data-id="8" class="font-display text-lg md:text-xl font-bold text-cream hidden sm:inline">Telstar Farms Mastiffs</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav data-id="9" id="desktop-nav-nav1" class="hidden lg:flex items-center gap-1">
+                <a data-id="10" href="#hero" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">Home</a>
+                <a data-id="11" href="#about" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">About</a>
+                <a data-id="12" href="#dogs" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">Our Dogs</a>
+                <a data-id="13" href="#litters" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">Litters</a>
+                <a data-id="14" href="#pricing" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">Pricing</a>
+                <a data-id="15" href="#waitlist" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">Waitlist</a>
+                <a data-id="16" href="#faq" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">FAQ</a>
+                <a data-id="17" href="#contact" class="text-cream/80 hover:text-gold text-sm font-medium px-3 py-2 rounded-md transition-colors no-underline">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button data-id="18" id="mobile-menu-btn-btn1" class="lg:hidden p-2 text-cream" aria-label="Open menu">
+                <i data-id="19" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <nav data-id="20" id="mobile-menu-nav2" class="hidden fixed inset-0 bg-forest z-50 flex flex-col">
+            <div data-id="21" class="flex items-center justify-between px-4 h-16">
+                <span data-id="22" class="font-display text-xl font-bold text-cream">Telstar Farms Mastiffs</span>
+                <button data-id="23" id="mobile-menu-close-btn2" class="p-2 text-cream" aria-label="Close menu">
+                    <i data-id="24" data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div data-id="25" class="flex flex-col items-center justify-center flex-1 gap-4">
+                <a data-id="26" href="#hero" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">Home</a>
+                <a data-id="27" href="#about" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">About</a>
+                <a data-id="28" href="#dogs" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">Our Dogs</a>
+                <a data-id="29" href="#litters" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">Litters</a>
+                <a data-id="30" href="#pricing" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">Pricing</a>
+                <a data-id="31" href="#waitlist" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">Waitlist</a>
+                <a data-id="32" href="#faq" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">FAQ</a>
+                <a data-id="33" href="#contact" class="mobile-nav-link text-cream text-xl font-display py-3 no-underline hover:text-gold transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main data-id="34">
+        <!-- ===== HERO SECTION ===== -->
+        <section data-id="35" id="hero" class="hero-texture min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+            <!-- Decorative Elements -->
+            <div data-id="36" class="absolute top-20 left-8 opacity-10">
+                <svg data-id="37" width="120" height="120" viewBox="0 0 100 100" fill="#D4A843"><circle data-id="38" cx="20" cy="20" r="10"/><circle data-id="39" cx="40" cy="12" r="10"/><circle data-id="40" cx="58" cy="20" r="10"/><circle data-id="41" cx="25" cy="45" r="8"/><circle data-id="42" cx="55" cy="45" r="8"/><ellipse data-id="43" cx="40" cy="65" rx="22" ry="18"/></svg>
+            </div>
+            <div data-id="44" class="absolute bottom-20 right-8 opacity-10">
+                <svg data-id="45" width="100" height="100" viewBox="0 0 100 100" fill="#C4A882"><circle data-id="46" cx="20" cy="20" r="10"/><circle data-id="47" cx="40" cy="12" r="10"/><circle data-id="48" cx="58" cy="20" r="10"/><circle data-id="49" cx="25" cy="45" r="8"/><circle data-id="50" cx="55" cy="45" r="8"/><ellipse data-id="51" cx="40" cy="65" rx="22" ry="18"/></svg>
+            </div>
+
+            <div data-id="52" class="max-w-5xl mx-auto px-4 md:px-6 text-center relative z-10">
+                <!-- Ranch Badge -->
+                <div data-id="53" class="inline-flex items-center gap-2 bg-cream/10 backdrop-blur-sm border border-gold/30 rounded-full px-5 py-2 mb-8">
+                    <i data-id="54" data-lucide="shield-check" class="w-4 h-4 text-gold"></i>
+                    <span data-id="55" class="text-gold text-sm font-semibold tracking-wider uppercase">AKC Registered Breeder · Dixon, CA</span>
+                </div>
+
+                <!-- Mastiff Silhouette Badge -->
+                <div data-id="56" class="mx-auto mb-8 w-36 h-36 md:w-44 md:h-44 rounded-full border-2 border-gold/30 flex items-center justify-center bg-cream/5 backdrop-blur-sm">
+                    <svg data-id="57" viewBox="0 0 200 160" class="w-24 h-20 md:w-28 md:h-24" fill="#D4A843" opacity="0.7">
+                        <ellipse data-id="58" cx="100" cy="130" rx="70" ry="20" opacity="0.2"/>
+                        <path data-id="59" d="M50,120 Q45,80 55,60 Q60,50 58,35 Q56,25 65,20 Q75,15 85,25 Q90,30 100,30 Q110,30 115,25 Q125,15 135,20 Q144,25 142,35 Q140,50 145,60 Q155,80 150,120 Z" opacity="0.8"/>
+                        <circle data-id="60" cx="82" cy="55" r="5" fill="#2D4A2D"/>
+                        <circle data-id="61" cx="118" cy="55" r="5" fill="#2D4A2D"/>
+                        <ellipse data-id="62" cx="100" cy="72" rx="10" ry="7" fill="#3D2B1F" opacity="0.6"/>
+                        <path data-id="63" d="M40,120 Q38,110 42,105 L58,120 Z" opacity="0.6"/>
+                        <path data-id="64" d="M160,120 Q162,110 158,105 L142,120 Z" opacity="0.6"/>
+                    </svg>
+                </div>
+
+                <h1 data-id="65" id="hero-title-hd1" class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
+                    Where Gentle Giants Are<br data-id="66" class="hidden sm:block"/> <span data-id="67" class="text-gold italic">Born on the Ranch</span>
+                </h1>
+
+                <p data-id="68" id="hero-sub-txt1" class="text-cream/75 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                    AKC English Mastiff puppies raised with love, structure, and wide-open spaces in Dixon, California
+                </p>
+
+                <div data-id="69" class="flex flex-wrap items-center justify-center gap-4 hero-btns">
+                    <a data-id="70" href="#waitlist" class="btn-primary">
+                        <i data-id="71" data-lucide="clipboard-list" class="w-5 h-5"></i>
+                        Join Our Waitlist
+                    </a>
+                    <a data-id="72" href="#dogs" class="btn-secondary">
+                        <i data-id="73" data-lucide="heart" class="w-5 h-5"></i>
+                        Meet Our Dogs
+                    </a>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div data-id="74" class="mt-16 animate-bounce">
+                    <i data-id="75" data-lucide="chevron-down" class="w-6 h-6 text-cream/40 mx-auto"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="76" class="paw-divider bg-cream">
+            <span data-id="77" class="paw-print"></span>
+            <span data-id="78" class="paw-print"></span>
+            <span data-id="79" class="paw-print"></span>
+            <span data-id="80" class="paw-print"></span>
+            <span data-id="81" class="paw-print"></span>
+        </div>
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <section data-id="82" id="about" class="bg-cream py-16 md:py-24">
+            <div data-id="83" class="max-w-6xl mx-auto px-4 md:px-6">
+                <div data-id="84" class="text-center mb-12 md:mb-16">
+                    <span data-id="85" class="text-gold font-semibold text-sm tracking-widest uppercase">Our Story</span>
+                    <h2 data-id="86" id="about-title-hd2" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">About Telstar Farms Mastiffs</h2>
+                    <div data-id="87" class="gold-line mx-auto"></div>
+                </div>
+
+                <div data-id="88" class="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-16">
+                    <!-- Ranch Image -->
+                    <div data-id="89" class="rounded-2xl overflow-hidden shadow-lg bg-cream-dark aspect-[4/3] flex items-center justify-center relative">
+                        <img data-id="90" src="https://th.bing.com/th?id=BSK1.ba43a91631a43473124119340146319_jpeg" alt="Rolling golden hills at the Telstar Farms property in Dixon, California" class="w-full h-full object-cover"/>
+                    </div>
+                    <div data-id="91">
+                        <h3 data-id="92" class="font-display text-xl md:text-2xl text-forest mb-4 italic">"We don't just breed dogs — we raise family members."</h3>
+                        <p data-id="93" class="text-chocolate/80 mb-4 leading-relaxed">
+                            Welcome to Telstar Farms Mastiffs, a small, family-run English Mastiff breeding program nestled in the heart of Dixon, California. Our puppies are born and raised right here on our ranch, surrounded by wide-open spaces, children, and the everyday sounds and experiences of a real working home.
+                        </p>
+                        <p data-id="94" class="text-chocolate/80 mb-4 leading-relaxed">
+                            Every puppy in our program benefits from Early Neurological Stimulation (ENS) and Early Scent Introduction (ESI) protocols from day three of life. We believe in producing structurally sound, temperamentally excellent English Mastiffs that thrive as family companions, therapy dogs, and show prospects alike.
+                        </p>
+                        <p data-id="95" class="text-chocolate/80 leading-relaxed">
+                            All of our breeding dogs are fully health-tested through OFA, ensuring that every puppy we produce has the best possible start. We are committed to this breed's future and to every family that joins the Telstar Farms family.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div data-id="96" class="grid sm:grid-cols-3 gap-6 md:gap-8">
+                    <div data-id="97" id="feature-card-1-crd1" class="bg-white rounded-2xl p-8 text-center card-hover shadow-sm border border-cream-dark">
+                        <div data-id="98" class="w-16 h-16 bg-forest/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-id="99" data-lucide="shield-check" class="w-8 h-8 text-forest"></i>
+                        </div>
+                        <h4 data-id="100" class="font-display text-lg font-semibold text-chocolate mb-3">Health Tested Parents</h4>
+                        <p data-id="101" class="text-chocolate/70 text-sm leading-relaxed">Full OFA health panels including hips, elbows, cardiac, and thyroid testing on all breeding dogs. We leave nothing to chance.</p>
+                    </div>
+                    <div data-id="102" id="feature-card-2-crd2" class="bg-white rounded-2xl p-8 text-center card-hover shadow-sm border border-cream-dark">
+                        <div data-id="103" class="w-16 h-16 bg-forest/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-id="104" data-lucide="trees" class="w-8 h-8 text-forest"></i>
+                        </div>
+                        <h4 data-id="105" class="font-display text-lg font-semibold text-chocolate mb-3">Raised Ranch Life</h4>
+                        <p data-id="106" class="text-chocolate/70 text-sm leading-relaxed">Puppies grow up underfoot with children, other dogs, and daily ranch activities. They're socialized, confident, and ready for the world.</p>
+                    </div>
+                    <div data-id="107" id="feature-card-3-crd3" class="bg-white rounded-2xl p-8 text-center card-hover shadow-sm border border-cream-dark">
+                        <div data-id="108" class="w-16 h-16 bg-forest/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i data-id="109" data-lucide="heart-handshake" class="w-8 h-8 text-forest"></i>
+                        </div>
+                        <h4 data-id="110" class="font-display text-lg font-semibold text-chocolate mb-3">Lifetime Support</h4>
+                        <p data-id="111" class="text-chocolate/70 text-sm leading-relaxed">When you get a puppy from us, you become family. We're here for you for the life of your dog — questions, advice, and check-ins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="112" class="paw-divider bg-cream-dark">
+            <span data-id="113" class="paw-print"></span>
+            <span data-id="114" class="paw-print"></span>
+            <span data-id="115" class="paw-print"></span>
+            <span data-id="116" class="paw-print"></span>
+            <span data-id="117" class="paw-print"></span>
+        </div>
+
+        <!-- ===== OUR DOGS SECTION ===== -->
+        <section data-id="118" id="dogs" class="bg-cream-dark py-16 md:py-24">
+            <div data-id="119" class="max-w-6xl mx-auto px-4 md:px-6">
+                <div data-id="120" class="text-center mb-12 md:mb-16">
+                    <span data-id="121" class="text-gold font-semibold text-sm tracking-widest uppercase">The Parents</span>
+                    <h2 data-id="122" id="dogs-title-hd3" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">Meet Our Dogs</h2>
+                    <div data-id="123" class="gold-line mx-auto"></div>
+                    <p data-id="124" class="text-chocolate/70 mt-4 max-w-xl mx-auto">Our sire and dam are carefully selected for health, temperament, structure, and breed type — exactly what the English Mastiff should be.</p>
+                </div>
+
+                <div data-id="125" class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+                    <!-- Shaw - Sire -->
+                    <div data-id="126" id="dog-Shaw-crd4" class="bg-white rounded-2xl overflow-hidden card-hover shadow-sm border border-cream-dark">
+                        <div data-id="127" class="aspect-[4/3] bg-gradient-to-br from-tan/30 to-cream-dark flex items-center justify-center relative overflow-hidden">
+                            <img data-id="128" src="https://th.bing.com/th?id=BSK3.fdbeed090ue44632793839001749518_jpeg" alt="Shaw, fawn English Mastiff sire of Telstar Farms Mastiffs" class="w-full h-full object-cover"/>
+                            <div data-id="129" class="absolute top-4 left-4 bg-forest text-cream text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Sire</div>
+                        </div>
+                        <div data-id="130" class="p-6 md:p-8">
+                            <h3 data-id="131" class="font-display text-2xl font-bold text-chocolate mb-1">Shaw</h3>
+                            <p data-id="132" class="text-gold font-semibold text-sm mb-4">Fawn · 220 lbs</p>
+                            <div data-id="133" class="space-y-2">
+                                <h4 data-id="134" class="text-xs font-bold text-chocolate/50 uppercase tracking-wider mb-2">OFA Health Clearances</h4>
+                                <div data-id="135" class="flex items-center gap-2">
+                                    <i data-id="136" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="137" class="text-sm text-chocolate/80">Hips: Good</span>
+                                </div>
+                                <div data-id="138" class="flex items-center gap-2">
+                                    <i data-id="139" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="140" class="text-sm text-chocolate/80">Elbows: Normal</span>
+                                </div>
+                                <div data-id="141" class="flex items-center gap-2">
+                                    <i data-id="142" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="143" class="text-sm text-chocolate/80">Cardiac: Normal</span>
+                                </div>
+                                <div data-id="144" class="flex items-center gap-2">
+                                    <i data-id="145" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="146" class="text-sm text-chocolate/80">Thyroid: Normal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Illy and Raya - Dam -->
+                    <div data-id="147" id="dog-rose-crd5" class="bg-white rounded-2xl overflow-hidden card-hover shadow-sm border border-cream-dark">
+                        <div data-id="148" class="aspect-[4/3] bg-gradient-to-br from-tan/30 to-cream-dark flex items-center justify-center relative overflow-hidden">
+                            <img data-id="149" src="https://th.bing.com/th?id=BSK2.5ic_48243308041076727_jpeg" alt="Illy and Raya, apricot brindle English Mastiff dam of Telstar Farms Mastiffs" class="w-full h-full object-cover"/>
+                            <div data-id="150" class="absolute top-4 left-4 bg-gold text-chocolate text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Dam</div>
+                        </div>
+                        <div data-id="151" class="p-6 md:p-8">
+                            <h3 data-id="152" class="font-display text-2xl font-bold text-chocolate mb-1">Illy and Raya</h3>
+                            <p data-id="153" class="text-gold font-semibold text-sm mb-4">Apricot Brindle · 165 lbs</p>
+                            <div data-id="154" class="space-y-2">
+                                <h4 data-id="155" class="text-xs font-bold text-chocolate/50 uppercase tracking-wider mb-2">OFA Health Clearances</h4>
+                                <div data-id="156" class="flex items-center gap-2">
+                                    <i data-id="157" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="158" class="text-sm text-chocolate/80">Hips: Fair</span>
+                                </div>
+                                <div data-id="159" class="flex items-center gap-2">
+                                    <i data-id="160" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="161" class="text-sm text-chocolate/80">Elbows: Normal</span>
+                                </div>
+                                <div data-id="162" class="flex items-center gap-2">
+                                    <i data-id="163" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="164" class="text-sm text-chocolate/80">Cardiac: Normal</span>
+                                </div>
+                                <div data-id="165" class="flex items-center gap-2">
+                                    <i data-id="166" data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                    <span data-id="167" class="text-sm text-chocolate/80">Thyroid: Normal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="168" class="paw-divider bg-cream">
+            <span data-id="169" class="paw-print"></span>
+            <span data-id="170" class="paw-print"></span>
+            <span data-id="171" class="paw-print"></span>
+            <span data-id="172" class="paw-print"></span>
+            <span data-id="173" class="paw-print"></span>
+        </div>
+
+        <!-- ===== LITTER ANNOUNCEMENTS SECTION ===== -->
+        <section data-id="174" id="litters" class="bg-cream py-16 md:py-24">
+            <div data-id="175" class="max-w-6xl mx-auto px-4 md:px-6">
+                <div data-id="176" class="text-center mb-12 md:mb-16">
+                    <span data-id="177" class="text-gold font-semibold text-sm tracking-widest uppercase">Our Puppies</span>
+                    <h2 data-id="178" id="litters-title-hd4" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">Litter Announcements</h2>
+                    <div data-id="179" class="gold-line mx-auto"></div>
+                </div>
+
+                <!-- Litter Status Card -->
+                <div data-id="180" class="max-w-2xl mx-auto mb-12 bg-forest rounded-2xl p-8 text-center shadow-lg relative overflow-hidden">
+                    <div data-id="181" class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                        <svg data-id="182" viewBox="0 0 100 100" fill="#D4A843"><circle data-id="183" cx="20" cy="20" r="10"/><circle data-id="184" cx="40" cy="12" r="10"/><circle data-id="185" cx="58" cy="20" r="10"/><circle data-id="186" cx="25" cy="45" r="8"/><circle data-id="187" cx="55" cy="45" r="8"/><ellipse data-id="188" cx="40" cy="65" rx="22" ry="18"/></svg>
+                    </div>
+                    <div data-id="189" class="relative z-10">
+                        <i data-id="190" data-lucide="baby" class="w-10 h-10 text-gold mx-auto mb-4"></i>
+                        <p data-id="191" class="text-cream/60 text-sm font-semibold tracking-widest uppercase mb-2">Next Litter Expected</p>
+                        <h3 data-id="192" class="font-display text-3xl md:text-4xl font-bold text-gold mb-3">Spring 2027</h3>
+                        <p data-id="193" class="text-cream/70 text-sm">Shaw × Illy and Raya — Fawn and Brindle puppies expected</p>
+                        <a data-id="194" href="#waitlist" class="btn-primary mt-6 inline-flex">
+                            <i data-id="195" data-lucide="clipboard-list" class="w-4 h-4"></i>
+                            Join the Waitlist
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Puppy Filter Buttons -->
+                <div data-id="196" class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button data-id="197" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border-2 border-forest transition-all cursor-pointer" data-filter="all">Show All</button>
+                    <button data-id="198" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border-2 border-green-500 text-green-700 bg-green-50 transition-all cursor-pointer" data-filter="Available">Available</button>
+                    <button data-id="199" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border-2 border-gold text-chocolate bg-gold/10 transition-all cursor-pointer" data-filter="Reserved">Reserved</button>
+                    <button data-id="200" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border-2 border-gray-400 text-gray-600 bg-gray-50 transition-all cursor-pointer" data-filter="Sold">Sold</button>
+                </div>
+
+                <!-- Puppy Cards Grid -->
+                <div data-id="201" id="puppy-grid-grd1" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Puppy 1 -->
+                    <div data-id="202" class="puppy-card bg-white rounded-2xl p-6 card-hover shadow-sm border border-cream-dark" data-status="Reserved">
+                        <div data-id="203" class="aspect-square rounded-xl bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center mb-4 relative">
+                            <svg data-id="204" viewBox="0 0 200 160" class="w-20 h-16 opacity-25" fill="#3D2B1F"><path data-id="205" d="M50,120 Q45,80 55,60 Q60,50 58,35 Q56,25 65,20 Q75,15 85,25 Q90,30 100,30 Q110,30 115,25 Q125,15 135,20 Q144,25 142,35 Q140,50 145,60 Q155,80 150,120 Z"/><circle data-id="206" cx="82" cy="55" r="5"/><circle data-id="207" cx="118" cy="55" r="5"/><ellipse data-id="208" cx="100" cy="72" rx="10" ry="7"/></svg>
+                            <div data-id="209" class="absolute top-3 right-3 w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow"></div>
+                        </div>
+                        <div data-id="210" class="flex items-center justify-between mb-2">
+                            <h4 data-id="211" class="font-display text-lg font-semibold text-chocolate">Red Collar</h4>
+                            <span data-id="212" class="status-reserved text-xs font-bold px-3 py-1 rounded-full">Reserved</span>
+                        </div>
+                        <p data-id="213" class="text-chocolate/60 text-sm mb-1"><i data-id="214" data-lucide="circle" class="w-3 h-3 inline text-blue-500 mr-1"></i> Male</p>
+                        <p data-id="215" class="text-gold font-bold text-lg">$2,500</p>
+                    </div>
+
+                    <!-- Puppy 2 -->
+                    <div data-id="216" class="puppy-card bg-white rounded-2xl p-6 card-hover shadow-sm border border-cream-dark" data-status="Available">
+                        <div data-id="217" class="aspect-square rounded-xl bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center mb-4 relative">
+                            <svg data-id="218" viewBox="0 0 200 160" class="w-20 h-16 opacity-25" fill="#3D2B1F"><path data-id="219" d="M50,120 Q45,80 55,60 Q60,50 58,35 Q56,25 65,20 Q75,15 85,25 Q90,30 100,30 Q110,30 115,25 Q125,15 135,20 Q144,25 142,35 Q140,50 145,60 Q155,80 150,120 Z"/><circle data-id="220" cx="82" cy="55" r="5"/><circle data-id="221" cx="118" cy="55" r="5"/><ellipse data-id="222" cx="100" cy="72" rx="10" ry="7"/></svg>
+                            <div data-id="223" class="absolute top-3 right-3 w-6 h-6 rounded-full bg-blue-500 border-2 border-white shadow"></div>
+                        </div>
+                        <div data-id="224" class="flex items-center justify-between mb-2">
+                            <h4 data-id="225" class="font-display text-lg font-semibold text-chocolate">Blue Collar</h4>
+                            <span data-id="226" class="status-available text-xs font-bold px-3 py-1 rounded-full">Available</span>
+                        </div>
+                        <p data-id="227" class="text-chocolate/60 text-sm mb-1"><i data-id="228" data-lucide="circle" class="w-3 h-3 inline text-blue-500 mr-1"></i> Male</p>
+                        <p data-id="229" class="text-gold font-bold text-lg">$2,500</p>
+                    </div>
+
+                    <!-- Puppy 3 -->
+                    <div data-id="230" class="puppy-card bg-white rounded-2xl p-6 card-hover shadow-sm border border-cream-dark" data-status="Reserved">
+                        <div data-id="231" class="aspect-square rounded-xl bg-gradient-to-br from-pink-100 to-pink-50 flex items-center justify-center mb-4 relative">
+                            <svg data-id="232" viewBox="0 0 200 160" class="w-20 h-16 opacity-25" fill="#3D2B1F"><path data-id="233" d="M50,120 Q45,80 55,60 Q60,50 58,35 Q56,25 65,20 Q75,15 85,25 Q90,30 100,30 Q110,30 115,25 Q125,15 135,20 Q144,25 142,35 Q140,50 145,60 Q155,80 150,120 Z"/><circle data-id="234" cx="82" cy="55" r="5"/><circle data-id="235" cx="118" cy="55" r="5"/><ellipse data-id="236" cx="100" cy="72" rx="10" ry="7"/></svg>
+                            <div data-id="237" class="absolute top-3 right-3 w-6 h-6 rounded-full bg-pink-400 border-2 border-white shadow"></div>
+                        </div>
+                        <div data-id="238" class="flex items-center justify-between mb-2">
+                            <h4 data-id="239" class="font-display text-lg font-semibold text-chocolate">Pink Collar</h4>
+                            <span data-id="240" class="status-reserved text-xs font-bold px-3 py-1 rounded-full">Reserved</span>
+                        </div>
+                        <p data-id="241" class="text-chocolate/60 text-sm mb-1"><i data-id="242" data-lucide="circle" class="w-3 h-3 inline text-pink-400 mr-1"></i> Female</p>
+                        <p data-id="243" class="text-gold font-bold text-lg">$2,800</p>
+                    </div>
+
+                    <!-- Puppy 4 -->
+                    <div data-id="244" class="puppy-card bg-white rounded-2xl p-6 card-hover shadow-sm border border-cream-dark" data-status="Available">
+                        <div data-id="245" class="aspect-square rounded-xl bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center mb-4 relative">
+                            <svg data-id="246" viewBox="0 0 200 160" class="w-20 h-16 opacity-25" fill="#3D2B1F"><path data-id="247" d="M50,120 Q45,80 55,60 Q60,50 58,35 Q56,25 65,20 Q75,15 85,25 Q90,30 100,30 Q110,30 115,25 Q125,15 135,20 Q144,25 142,35 Q140,50 145,60 Q155,80 150,120 Z"/><circle data-id="248" cx="82" cy="55" r="5"/><circle data-id="249" cx="118" cy="55" r="5"/><ellipse data-id="250" cx="100" cy="72" rx="10" ry="7"/></svg>
+                            <div data-id="251" class="absolute top-3 right-3 w-6 h-6 rounded-full bg-purple-500 border-2 border-white shadow"></div>
+                        </div>
+                        <div data-id="252" class="flex items-center justify-between mb-2">
+                            <h4 data-id="253" class="font-display text-lg font-semibold text-chocolate">Purple Collar</h4>
+                            <span data-id="254" class="status-available text-xs font-bold px-3 py-1 rounded-full">Available</span>
+                        </div>
+                        <p data-id="255" class="text-chocolate/60 text-sm mb-1"><i data-id="256" data-lucide="circle" class="w-3 h-3 inline text-pink-400 mr-1"></i> Female</p>
+                        <p data-id="257" class="text-gold font-bold text-lg">$2,800</p>
+                    </div>
+
+                    <!-- Puppy 5 -->
+                    <div data-id="258" class="puppy-card bg-white rounded-2xl p-6 card-hover shadow-sm border border-cream-dark" data-status="Available">
+                        <div data-id="259" class="aspect-square rounded-xl bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center mb-4 relative">
+                            <svg data-id="260" viewBox="0 0 200 160" class="w-20 h-16 opacity-25" fill="#3D2B1F"><path data-id="261" d="M50,120 Q45,80 55,60 Q60,50 58,35 Q56,25 65,20 Q75,15 85,25 Q90,30 100,30 Q110,30 115,25 Q125,15 135,20 Q144,25 142,35 Q140,50 145,60 Q155,80 150,120 Z"/><circle data-id="262" cx="82" cy="55" r="5"/><circle data-id="263" cx="118" cy="55" r="5"/><ellipse data-id="264" cx="100" cy="72" rx="10" ry="7"/></svg>
+                            <div data-id="265" class="absolute top-3 right-3 w-6 h-6 rounded-full bg-green-500 border-2 border-white shadow"></div>
+                        </div>
+                        <div data-id="266" class="flex items-center justify-between mb-2">
+                            <h4 data-id="267" class="font-display text-lg font-semibold text-chocolate">Green Collar</h4>
+                            <span data-id="268" class="status-available text-xs font-bold px-3 py-1 rounded-full">Available</span>
+                        </div>
+                        <p data-id="269" class="text-chocolate/60 text-sm mb-1"><i data-id="270" data-lucide="circle" class="w-3 h-3 inline text-blue-500 mr-1"></i> Male</p>
+                        <p data-id="271" class="text-gold font-bold text-lg">$2,500</p>
+                    </div>
+
+                    <!-- Puppy 6 -->
+                    <div data-id="272" class="puppy-card bg-white rounded-2xl p-6 card-hover shadow-sm border border-cream-dark" data-status="Sold">
+                        <div data-id="273" class="aspect-square rounded-xl bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center mb-4 relative">
+                            <svg data-id="274" viewBox="0 0 200 160" class="w-20 h-16 opacity-25" fill="#3D2B1F"><path data-id="275" d="M50,120 Q45,80 55,60 Q60,50 58,35 Q56,25 65,20 Q75,15 85,25 Q90,30 100,30 Q110,30 115,25 Q125,15 135,20 Q144,25 142,35 Q140,50 145,60 Q155,80 150,120 Z"/><circle data-id="276" cx="82" cy="55" r="5"/><circle data-id="277" cx="118" cy="55" r="5"/><ellipse data-id="278" cx="100" cy="72" rx="10" ry="7"/></svg>
+                            <div data-id="279" class="absolute top-3 right-3 w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow"></div>
+                        </div>
+                        <div data-id="280" class="flex items-center justify-between mb-2">
+                            <h4 data-id="281" class="font-display text-lg font-semibold text-chocolate">Yellow Collar</h4>
+                            <span data-id="282" class="status-sold text-xs font-bold px-3 py-1 rounded-full">Sold</span>
+                        </div>
+                        <p data-id="283" class="text-chocolate/60 text-sm mb-1"><i data-id="284" data-lucide="circle" class="w-3 h-3 inline text-pink-400 mr-1"></i> Female</p>
+                        <p data-id="285" class="text-gold font-bold text-lg">$2,800</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="286" class="paw-divider bg-cream-dark">
+            <span data-id="287" class="paw-print"></span>
+            <span data-id="288" class="paw-print"></span>
+            <span data-id="289" class="paw-print"></span>
+            <span data-id="290" class="paw-print"></span>
+            <span data-id="291" class="paw-print"></span>
+        </div>
+
+        <!-- ===== PRICING & DEPOSIT SECTION ===== -->
+        <section data-id="292" id="pricing" class="bg-cream-dark py-16 md:py-24">
+            <div data-id="293" class="max-w-6xl mx-auto px-4 md:px-6">
+                <div data-id="294" class="text-center mb-12 md:mb-16">
+                    <span data-id="295" class="text-gold font-semibold text-sm tracking-widest uppercase">Investment</span>
+                    <h2 data-id="296" id="pricing-title-hd5" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">Pricing & Deposits</h2>
+                    <div data-id="297" class="gold-line mx-auto"></div>
+                </div>
+
+                <div data-id="298" class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Pricing Table -->
+                    <div data-id="299" class="bg-white rounded-2xl shadow-sm border border-cream-dark overflow-hidden">
+                        <div data-id="300" class="bg-forest p-6">
+                            <h3 data-id="301" class="font-display text-xl font-bold text-cream text-center">
+                                <i data-id="302" data-lucide="tag" class="w-5 h-5 inline text-gold mr-2 -mt-1"></i>
+                                Puppy Pricing
+                            </h3>
+                        </div>
+                        <div data-id="303" class="p-6 md:p-8">
+                            <div data-id="304" class="space-y-4">
+                                <div data-id="305" class="flex justify-between items-center py-3 border-b border-cream-dark">
+                                    <div data-id="306">
+                                        <p data-id="307" class="font-semibold text-chocolate">Pet/Companion Male</p>
+                                        <p data-id="308" class="text-xs text-chocolate/50">Limited AKC Registration</p>
+                                    </div>
+                                    <span data-id="309" class="font-display text-xl font-bold text-gold">$2,500</span>
+                                </div>
+                                <div data-id="310" class="flex justify-between items-center py-3 border-b border-cream-dark">
+                                    <div data-id="311">
+                                        <p data-id="312" class="font-semibold text-chocolate">Pet/Companion Female</p>
+                                        <p data-id="313" class="text-xs text-chocolate/50">Limited AKC Registration</p>
+                                    </div>
+                                    <span data-id="314" class="font-display text-xl font-bold text-gold">$2,800</span>
+                                </div>
+                                <div data-id="315" class="flex justify-between items-center py-3 border-b border-cream-dark">
+                                    <div data-id="316">
+                                        <p data-id="317" class="font-semibold text-chocolate">Show/Breed Prospect Male</p>
+                                        <p data-id="318" class="text-xs text-chocolate/50">Full AKC Registration</p>
+                                    </div>
+                                    <span data-id="319" class="font-display text-xl font-bold text-gold">$3,200+</span>
+                                </div>
+                                <div data-id="320" class="flex justify-between items-center py-3">
+                                    <div data-id="321">
+                                        <p data-id="322" class="font-semibold text-chocolate">Show/Breed Prospect Female</p>
+                                        <p data-id="323" class="text-xs text-chocolate/50">Full AKC Registration</p>
+                                    </div>
+                                    <span data-id="324" class="font-display text-xl font-bold text-gold">$3,500+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deposit Structure -->
+                    <div data-id="325" class="bg-white rounded-2xl shadow-sm border border-cream-dark overflow-hidden">
+                        <div data-id="326" class="bg-chocolate p-6">
+                            <h3 data-id="327" class="font-display text-xl font-bold text-cream text-center">
+                                <i data-id="328" data-lucide="wallet" class="w-5 h-5 inline text-gold mr-2 -mt-1"></i>
+                                Deposit Structure
+                            </h3>
+                        </div>
+                        <div data-id="329" class="p-6 md:p-8">
+                            <div data-id="330" class="space-y-6">
+                                <div data-id="331" class="flex gap-4">
+                                    <div data-id="332" class="flex-shrink-0 w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">
+                                        <span data-id="333" class="font-display font-bold text-gold">1</span>
+                                    </div>
+                                    <div data-id="334">
+                                        <p data-id="335" class="font-semibold text-chocolate">Waitlist Deposit — $300</p>
+                                        <p data-id="336" class="text-sm text-chocolate/60">Non-refundable. Holds your place on our waitlist.</p>
+                                    </div>
+                                </div>
+                                <div data-id="337" class="flex gap-4">
+                                    <div data-id="338" class="flex-shrink-0 w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">
+                                        <span data-id="339" class="font-display font-bold text-gold">2</span>
+                                    </div>
+                                    <div data-id="340">
+                                        <p data-id="341" class="font-semibold text-chocolate">Puppy Deposit — $500</p>
+                                        <p data-id="342" class="text-sm text-chocolate/60">Applied to purchase price. Due upon puppy selection.</p>
+                                    </div>
+                                </div>
+                                <div data-id="343" class="flex gap-4">
+                                    <div data-id="344" class="flex-shrink-0 w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">
+                                        <span data-id="345" class="font-display font-bold text-gold">3</span>
+                                    </div>
+                                    <div data-id="346">
+                                        <p data-id="347" class="font-semibold text-chocolate">Remaining Balance</p>
+                                        <p data-id="348" class="text-sm text-chocolate/60">Due at pickup (8 weeks).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-id="349" class="mt-8 pt-6 border-t border-cream-dark">
+                                <p data-id="350" class="text-xs font-bold text-chocolate/50 uppercase tracking-wider mb-3">Payment Methods Accepted</p>
+                                <div data-id="351" class="flex flex-wrap gap-2">
+                                    <span data-id="352" class="bg-cream rounded-full px-3 py-1 text-xs font-semibold text-chocolate/70">Cash</span>
+                                    <span data-id="353" class="bg-cream rounded-full px-3 py-1 text-xs font-semibold text-chocolate/70">Zelle</span>
+                                    <span data-id="354" class="bg-cream rounded-full px-3 py-1 text-xs font-semibold text-chocolate/70">Venmo</span>
+                                    <span data-id="355" class="bg-cream rounded-full px-3 py-1 text-xs font-semibold text-chocolate/70">CashApp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Guarantee Banner -->
+                <div data-id="356" class="max-w-5xl mx-auto mt-8 bg-forest/5 border-2 border-forest/20 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                    <div data-id="357" class="flex-shrink-0 w-14 h-14 bg-forest/10 rounded-full flex items-center justify-center">
+                        <i data-id="358" data-lucide="shield-check" class="w-7 h-7 text-forest"></i>
+                    </div>
+                    <div data-id="359">
+                        <h4 data-id="360" class="font-display text-lg font-bold text-forest mb-1">2-Year Genetic Health Guarantee</h4>
+                        <p data-id="361" class="text-chocolate/70 text-sm">Every Telstar Farms Mastiff puppy comes with a comprehensive 2-year genetic health guarantee. We stand behind the health and quality of every puppy we produce.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="362" class="paw-divider bg-cream">
+            <span data-id="363" class="paw-print"></span>
+            <span data-id="364" class="paw-print"></span>
+            <span data-id="365" class="paw-print"></span>
+            <span data-id="366" class="paw-print"></span>
+            <span data-id="367" class="paw-print"></span>
+        </div>
+
+        <!-- ===== WAITLIST SECTION ===== -->
+        <section data-id="368" id="waitlist" class="bg-cream py-16 md:py-24">
+            <div data-id="369" class="max-w-6xl mx-auto px-4 md:px-6">
+                <div data-id="370" class="text-center mb-12 md:mb-16">
+                    <span data-id="371" class="text-gold font-semibold text-sm tracking-widest uppercase">Get Started</span>
+                    <h2 data-id="372" id="waitlist-title-hd6" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">Join Our Waitlist</h2>
+                    <div data-id="373" class="gold-line mx-auto"></div>
+                </div>
+
+                <div data-id="374" class="grid lg:grid-cols-5 gap-10 lg:gap-16">
+                    <!-- How It Works -->
+                    <div data-id="375" class="lg:col-span-2">
+                        <h3 data-id="376" class="font-display text-xl font-bold text-chocolate mb-6">
+                            <i data-id="377" data-lucide="list-ordered" class="w-5 h-5 inline text-gold mr-2 -mt-1"></i>
+                            How It Works
+                        </h3>
+                        <div data-id="378" class="space-y-5">
+                            <div data-id="379" class="flex gap-3">
+                                <div data-id="380" class="flex-shrink-0 w-8 h-8 bg-forest rounded-full flex items-center justify-center text-cream text-sm font-bold">1</div>
+                                <div data-id="381">
+                                    <p data-id="382" class="font-semibold text-chocolate text-sm">Submit Questionnaire</p>
+                                    <p data-id="383" class="text-xs text-chocolate/60">Fill out the form so we can learn about you.</p>
+                                </div>
+                            </div>
+                            <div data-id="384" class="flex gap-3">
+                                <div data-id="385" class="flex-shrink-0 w-8 h-8 bg-forest rounded-full flex items-center justify-center text-cream text-sm font-bold">2</div>
+                                <div data-id="386">
+                                    <p data-id="387" class="font-semibold text-chocolate text-sm">Pay $300 Waitlist Deposit</p>
+                                    <p data-id="388" class="text-xs text-chocolate/60">Secures your spot on our waitlist.</p>
+                                </div>
+                            </div>
+                            <div data-id="389" class="flex gap-3">
+                                <div data-id="390" class="flex-shrink-0 w-8 h-8 bg-forest rounded-full flex items-center justify-center text-cream text-sm font-bold">3</div>
+                                <div data-id="391">
+                                    <p data-id="392" class="font-semibold text-chocolate text-sm">Receive Litter Updates</p>
+                                    <p data-id="393" class="text-xs text-chocolate/60">We'll keep you in the loop from day one.</p>
+                                </div>
+                            </div>
+                            <div data-id="394" class="flex gap-3">
+                                <div data-id="395" class="flex-shrink-0 w-8 h-8 bg-forest rounded-full flex items-center justify-center text-cream text-sm font-bold">4</div>
+                                <div data-id="396">
+                                    <p data-id="397" class="font-semibold text-chocolate text-sm">Puppy Selection at 6 Weeks</p>
+                                    <p data-id="398" class="text-xs text-chocolate/60">Choose your puppy based on waitlist order.</p>
+                                </div>
+                            </div>
+                            <div data-id="399" class="flex gap-3">
+                                <div data-id="400" class="flex-shrink-0 w-8 h-8 bg-forest rounded-full flex items-center justify-center text-cream text-sm font-bold">5</div>
+                                <div data-id="401">
+                                    <p data-id="402" class="font-semibold text-chocolate text-sm">Pay Puppy Deposit ($500)</p>
+                                    <p data-id="403" class="text-xs text-chocolate/60">Applied to your total purchase price.</p>
+                                </div>
+                            </div>
+                            <div data-id="404" class="flex gap-3">
+                                <div data-id="405" class="flex-shrink-0 w-8 h-8 bg-forest rounded-full flex items-center justify-center text-cream text-sm font-bold">6</div>
+                                <div data-id="406">
+                                    <p data-id="407" class="font-semibold text-chocolate text-sm">Weekly Updates (Weeks 6–8)</p>
+                                    <p data-id="408" class="text-xs text-chocolate/60">Photos, milestones, and progress reports.</p>
+                                </div>
+                            </div>
+                            <div data-id="409" class="flex gap-3">
+                                <div data-id="410" class="flex-shrink-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-chocolate text-sm font-bold">7</div>
+                                <div data-id="411">
+                                    <p data-id="412" class="font-semibold text-chocolate text-sm">Take Puppy Home at 8 Weeks!</p>
+                                    <p data-id="413" class="text-xs text-chocolate/60">With full puppy packet and starter kit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Waitlist Form -->
+                    <div data-id="414" class="lg:col-span-3">
+                        <div data-id="415" id="waitlist-form-container-frm1" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-cream-dark">
+                            <h3 data-id="416" class="font-display text-xl font-bold text-chocolate mb-6">Puppy Questionnaire</h3>
+
+                            <form data-id="417" id="waitlist-form-frm2" class="space-y-5" novalidate>
+                                <div data-id="418" class="grid sm:grid-cols-2 gap-5">
+                                    <div data-id="419">
+                                        <label data-id="420" class="block text-sm font-semibold text-chocolate mb-1">Full Name <span data-id="421" class="text-red-500">*</span></label>
+                                        <input data-id="422" type="text" id="form-name-inp1" class="form-input" placeholder="Your full name" required />
+                                    </div>
+                                    <div data-id="423">
+                                        <label data-id="424" class="block text-sm font-semibold text-chocolate mb-1">Email <span data-id="425" class="text-red-500">*</span></label>
+                                        <input data-id="426" type="email" id="form-email-inp2" class="form-input" placeholder="you@email.com" required />
+                                    </div>
+                                </div>
+                                <div data-id="427" class="grid sm:grid-cols-2 gap-5">
+                                    <div data-id="428">
+                                        <label data-id="429" class="block text-sm font-semibold text-chocolate mb-1">Phone <span data-id="430" class="text-red-500">*</span></label>
+                                        <input data-id="431" type="tel" id="form-phone-inp3" class="form-input" placeholder="(555) 123-4567" required />
+                                    </div>
+                                    <div data-id="432">
+                                        <label data-id="433" class="block text-sm font-semibold text-chocolate mb-1">City / State <span data-id="434" class="text-red-500">*</span></label>
+                                        <input data-id="435" type="text" id="form-city-inp4" class="form-input" placeholder="Sacramento, CA" required />
+                                    </div>
+                                </div>
+
+                                <div data-id="436">
+                                    <label data-id="437" class="block text-sm font-semibold text-chocolate mb-2">Which sex do you prefer? <span data-id="438" class="text-red-500">*</span></label>
+                                    <div data-id="439" class="flex flex-wrap gap-4">
+                                        <label data-id="440" class="flex items-center gap-2 cursor-pointer">
+                                            <input data-id="441" type="radio" name="sex-pref" value="Male" class="accent-forest w-4 h-4" />
+                                            <span data-id="442" class="text-sm text-chocolate">Male</span>
+                                        </label>
+                                        <label data-id="443" class="flex items-center gap-2 cursor-pointer">
+                                            <input data-id="444" type="radio" name="sex-pref" value="Female" class="accent-forest w-4 h-4" />
+                                            <span data-id="445" class="text-sm text-chocolate">Female</span>
+                                        </label>
+                                        <label data-id="446" class="flex items-center gap-2 cursor-pointer">
+                                            <input data-id="447" type="radio" name="sex-pref" value="No Preference" class="accent-forest w-4 h-4" />
+                                            <span data-id="448" class="text-sm text-chocolate">No Preference</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div data-id="449">
+                                    <label data-id="450" class="block text-sm font-semibold text-chocolate mb-2">Pet or Show/Breed?</label>
+                                    <div data-id="451" class="flex flex-wrap gap-4">
+                                        <label data-id="452" class="flex items-center gap-2 cursor-pointer">
+                                            <input data-id="453" type="radio" name="purpose" value="Pet" class="accent-forest w-4 h-4" />
+                                            <span data-id="454" class="text-sm text-chocolate">Pet / Companion</span>
+                                        </label>
+                                        <label data-id="455" class="flex items-center gap-2 cursor-pointer">
+                                            <input data-id="456" type="radio" name="purpose" value="Show/Breed" class="accent-forest w-4 h-4" />
+                                            <span data-id="457" class="text-sm text-chocolate">Show / Breed</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div data-id="458">
+                                    <label data-id="459" class="block text-sm font-semibold text-chocolate mb-2">Do you have experience with large breeds?</label>
+                                    <div data-id="460" class="flex flex-wrap gap-4">
+                                        <label data-id="461" class="flex items-center gap-2 cursor-pointer">
+                                            <input data-id="462" type="radio" name="experience" value="Yes" class="accent-forest w-4 h-4" />
+                                            <span data-id="463" class="text-sm text-chocolate">Yes</span>
+                                        </label>
+                                        <label data-id="464" class="flex items-center gap-2 cursor-pointer">
+                                            <input data-id="465" type="radio" name="experience" value="No" class="accent-forest w-4 h-4" />
+                                            <span data-id="466" class="text-sm text-chocolate">No</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div data-id="467">
+                                    <label data-id="468" class="block text-sm font-semibold text-chocolate mb-1">Tell us about your home and lifestyle</label>
+                                    <textarea data-id="469" id="form-lifestyle-txt1" class="form-input" rows="4" placeholder="Do you have a yard? Other pets? Children? What's your daily routine like?"></textarea>
+                                </div>
+
+                                <div data-id="470">
+                                    <label data-id="471" class="block text-sm font-semibold text-chocolate mb-1">How did you hear about us?</label>
+                                    <select data-id="472" id="form-referral-sel1" class="form-input">
+                                        <option data-id="473" value="">Select one...</option>
+                                        <option data-id="474" value="Facebook">Facebook</option>
+                                        <option data-id="475" value="Instagram">Instagram</option>
+                                        <option data-id="476" value="Word of Mouth">Word of Mouth</option>
+                                        <option data-id="477" value="AKC Marketplace">AKC Marketplace</option>
+                                        <option data-id="478" value="Google">Google</option>
+                                        <option data-id="479" value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <button data-id="480" type="submit" id="form-submit-btn3" class="btn-primary w-full justify-center text-center">
+                                    <i data-id="481" data-lucide="send" class="w-5 h-5"></i>
+                                    Submit Questionnaire
+                                </button>
+                            </form>
+
+                            <!-- Success Message -->
+                            <div data-id="482" id="form-success-suc1" class="hidden text-center py-12">
+                                <div data-id="483" class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <i data-id="484" data-lucide="check-circle" class="w-10 h-10 text-green-600"></i>
+                                </div>
+                                <h3 data-id="485" class="font-display text-2xl font-bold text-chocolate mb-3">Thank You!</h3>
+                                <p data-id="486" class="text-chocolate/70 max-w-md mx-auto">Your questionnaire has been submitted. We'll review your application and get back to you within 48 hours. We look forward to welcoming you to the Telstar Farms family!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="487" class="paw-divider bg-cream-dark">
+            <span data-id="488" class="paw-print"></span>
+            <span data-id="489" class="paw-print"></span>
+            <span data-id="490" class="paw-print"></span>
+            <span data-id="491" class="paw-print"></span>
+            <span data-id="492" class="paw-print"></span>
+        </div>
+
+        <!-- ===== WEEKLY UPDATE CALENDAR SECTION ===== -->
+        <section data-id="493" id="timeline" class="bg-cream-dark py-16 md:py-24">
+            <div data-id="494" class="max-w-4xl mx-auto px-4 md:px-6">
+                <div data-id="495" class="text-center mb-12 md:mb-16">
+                    <span data-id="496" class="text-gold font-semibold text-sm tracking-widest uppercase">The Journey</span>
+                    <h2 data-id="497" id="timeline-title-hd7" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">Puppy Development Timeline</h2>
+                    <div data-id="498" class="gold-line mx-auto"></div>
+                    <p data-id="499" class="text-chocolate/70 mt-4 max-w-xl mx-auto">From birth to go-home day — here's what happens each week as your puppy grows with us on the ranch.</p>
+                </div>
+
+                <div data-id="500" class="relative">
+                    <div data-id="501" class="timeline-line hidden md:block"></div>
+
+                    <div data-id="502" class="space-y-6 md:space-y-8">
+                        <!-- Week 0-1 -->
+                        <div data-id="503" class="md:flex md:items-center md:gap-8">
+                            <div data-id="504" class="md:w-1/2 md:text-right md:pr-8">
+                                <div data-id="505" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover inline-block w-full">
+                                    <div data-id="506" class="flex items-center gap-3 md:flex-row-reverse mb-2">
+                                        <div data-id="507" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="508" data-lucide="baby" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="509" class="font-display text-lg font-bold text-chocolate">Week 0–1: Birth</h4>
+                                    </div>
+                                    <p data-id="510" class="text-sm text-chocolate/70">Puppies are born! ENS (Early Neurological Stimulation) protocol begins on day 3. Daily weight checks ensure every puppy is thriving.</p>
+                                </div>
+                            </div>
+                            <div data-id="511" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="512" class="text-cream text-xs font-bold">1</span>
+                            </div>
+                            <div data-id="513" class="md:w-1/2 md:pl-8"></div>
+                        </div>
+
+                        <!-- Week 1-2 -->
+                        <div data-id="514" class="md:flex md:items-center md:gap-8">
+                            <div data-id="515" class="md:w-1/2 md:pr-8"></div>
+                            <div data-id="516" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="517" class="text-cream text-xs font-bold">2</span>
+                            </div>
+                            <div data-id="518" class="md:w-1/2 md:pl-8">
+                                <div data-id="519" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover">
+                                    <div data-id="520" class="flex items-center gap-3 mb-2">
+                                        <div data-id="521" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="522" data-lucide="eye-off" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="523" class="font-display text-lg font-bold text-chocolate">Week 1–2: Growing</h4>
+                                    </div>
+                                    <p data-id="524" class="text-sm text-chocolate/70">Eyes and ears still closed. ENS protocol completes at day 16. Continued daily weight checks and gentle handling by our family.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week 2-3 -->
+                        <div data-id="525" class="md:flex md:items-center md:gap-8">
+                            <div data-id="526" class="md:w-1/2 md:text-right md:pr-8">
+                                <div data-id="527" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover inline-block w-full">
+                                    <div data-id="528" class="flex items-center gap-3 md:flex-row-reverse mb-2">
+                                        <div data-id="529" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="530" data-lucide="eye" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="531" class="font-display text-lg font-bold text-chocolate">Week 2–3: Eyes Open!</h4>
+                                    </div>
+                                    <p data-id="532" class="text-sm text-chocolate/70">Eyes are opening! Puppies begin to walk, explore, and respond to their first sounds. The world gets a lot bigger.</p>
+                                </div>
+                            </div>
+                            <div data-id="533" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="534" class="text-cream text-xs font-bold">3</span>
+                            </div>
+                            <div data-id="535" class="md:w-1/2 md:pl-8"></div>
+                        </div>
+
+                        <!-- Week 3-4 -->
+                        <div data-id="536" class="md:flex md:items-center md:gap-8">
+                            <div data-id="537" class="md:w-1/2 md:pr-8"></div>
+                            <div data-id="538" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="539" class="text-cream text-xs font-bold">4</span>
+                            </div>
+                            <div data-id="540" class="md:w-1/2 md:pl-8">
+                                <div data-id="541" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover">
+                                    <div data-id="542" class="flex items-center gap-3 mb-2">
+                                        <div data-id="543" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="544" data-lucide="utensils-crossed" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="545" class="font-display text-lg font-bold text-chocolate">Week 3–4: Weaning</h4>
+                                    </div>
+                                    <p data-id="546" class="text-sm text-chocolate/70">Weaning begins! First solid food introduced. Socialization with household sounds, new textures, and gentle handling increases.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week 4-5 -->
+                        <div data-id="547" class="md:flex md:items-center md:gap-8">
+                            <div data-id="548" class="md:w-1/2 md:text-right md:pr-8">
+                                <div data-id="549" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover inline-block w-full">
+                                    <div data-id="550" class="flex items-center gap-3 md:flex-row-reverse mb-2">
+                                        <div data-id="551" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="552" data-lucide="paw-print" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="553" class="font-display text-lg font-bold text-chocolate">Week 4–5: Play Time</h4>
+                                    </div>
+                                    <p data-id="554" class="text-sm text-chocolate/70">Play behavior is in full swing. Individual personalities emerge. First nail trims and grooming intro. So much fun to watch!</p>
+                                </div>
+                            </div>
+                            <div data-id="555" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="556" class="text-cream text-xs font-bold">5</span>
+                            </div>
+                            <div data-id="557" class="md:w-1/2 md:pl-8"></div>
+                        </div>
+
+                        <!-- Week 5-6 -->
+                        <div data-id="558" class="md:flex md:items-center md:gap-8">
+                            <div data-id="559" class="md:w-1/2 md:pr-8"></div>
+                            <div data-id="560" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="561" class="text-cream text-xs font-bold">6</span>
+                            </div>
+                            <div data-id="562" class="md:w-1/2 md:pl-8">
+                                <div data-id="563" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover">
+                                    <div data-id="564" class="flex items-center gap-3 mb-2">
+                                        <div data-id="565" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="566" data-lucide="camera" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="567" class="font-display text-lg font-bold text-chocolate">Week 5–6: Selection</h4>
+                                    </div>
+                                    <p data-id="568" class="text-sm text-chocolate/70">Puppy selection week! Vet wellness check performed. First professional photos taken and shared with families.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week 6-7 -->
+                        <div data-id="569" class="md:flex md:items-center md:gap-8">
+                            <div data-id="570" class="md:w-1/2 md:text-right md:pr-8">
+                                <div data-id="571" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover inline-block w-full">
+                                    <div data-id="572" class="flex items-center gap-3 md:flex-row-reverse mb-2">
+                                        <div data-id="573" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="574" data-lucide="file-check" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="575" class="font-display text-lg font-bold text-chocolate">Week 6–7: Prep</h4>
+                                    </div>
+                                    <p data-id="576" class="text-sm text-chocolate/70">AKC registration processed. Microchipping completed. Deworming schedule continues. Puppies are getting ready!</p>
+                                </div>
+                            </div>
+                            <div data-id="577" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="578" class="text-cream text-xs font-bold">7</span>
+                            </div>
+                            <div data-id="579" class="md:w-1/2 md:pl-8"></div>
+                        </div>
+
+                        <!-- Week 7-8 -->
+                        <div data-id="580" class="md:flex md:items-center md:gap-8">
+                            <div data-id="581" class="md:w-1/2 md:pr-8"></div>
+                            <div data-id="582" class="hidden md:flex w-8 h-8 bg-forest rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <span data-id="583" class="text-cream text-xs font-bold">8</span>
+                            </div>
+                            <div data-id="584" class="md:w-1/2 md:pl-8">
+                                <div data-id="585" class="bg-white rounded-xl p-5 shadow-sm border border-cream-dark card-hover">
+                                    <div data-id="586" class="flex items-center gap-3 mb-2">
+                                        <div data-id="587" class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="588" data-lucide="stethoscope" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="589" class="font-display text-lg font-bold text-chocolate">Week 7–8: Final Prep</h4>
+                                    </div>
+                                    <p data-id="590" class="text-sm text-chocolate/70">Final vet check, vaccine records completed, and preparing for the big day. Almost time to go home!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week 8 - GO HOME! -->
+                        <div data-id="591" class="md:flex md:items-center md:gap-8">
+                            <div data-id="592" class="md:w-1/2 md:text-right md:pr-8">
+                                <div data-id="593" class="bg-forest rounded-xl p-6 shadow-lg inline-block w-full">
+                                    <div data-id="594" class="flex items-center gap-3 md:flex-row-reverse mb-2">
+                                        <div data-id="595" class="w-10 h-10 bg-gold/30 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-id="596" data-lucide="home" class="w-5 h-5 text-gold"></i>
+                                        </div>
+                                        <h4 data-id="597" class="font-display text-lg font-bold text-gold">Week 8: GO HOME WEEK! 🎉</h4>
+                                    </div>
+                                    <p data-id="598" class="text-sm text-cream/80">The day you've been waiting for! Your puppy comes home with a complete puppy packet, health records, AKC papers, starter food kit, blanket with littermate scent, and a lifetime of support from Telstar Farms.</p>
+                                </div>
+                            </div>
+                            <div data-id="599" class="hidden md:flex w-10 h-10 bg-gold rounded-full items-center justify-center flex-shrink-0 relative z-10 border-4 border-cream-dark">
+                                <i data-id="600" data-lucide="star" class="w-4 h-4 text-chocolate"></i>
+                            </div>
+                            <div data-id="601" class="md:w-1/2 md:pl-8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="602" class="paw-divider bg-cream">
+            <span data-id="603" class="paw-print"></span>
+            <span data-id="604" class="paw-print"></span>
+            <span data-id="605" class="paw-print"></span>
+            <span data-id="606" class="paw-print"></span>
+            <span data-id="607" class="paw-print"></span>
+        </div>
+
+        <!-- ===== TESTIMONIALS SECTION ===== -->
+        <section data-id="608" id="testimonials" class="bg-cream py-16 md:py-24">
+            <div data-id="609" class="max-w-6xl mx-auto px-4 md:px-6">
+                <div data-id="610" class="text-center mb-12 md:mb-16">
+                    <span data-id="611" class="text-gold font-semibold text-sm tracking-widest uppercase">Happy Families</span>
+                    <h2 data-id="612" id="testimonials-title-hd8" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">What Our Families Say</h2>
+                    <div data-id="613" class="gold-line mx-auto"></div>
+                </div>
+
+                <div data-id="614" class="grid md:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Testimonial 1 -->
+                    <div data-id="615" id="testimonial-1-tst1" class="bg-white rounded-2xl p-6 md:p-8 card-hover shadow-sm border border-cream-dark">
+                        <div data-id="616" class="flex gap-1 mb-4">
+                            <i data-id="617" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="618" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="619" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="620" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="621" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                        </div>
+                        <p data-id="622" class="text-chocolate/80 italic leading-relaxed mb-6">"Getting our boy Bruno from Telstar Farms was the best decision. He was so well socialized and came home already knowing his name!"</p>
+                        <div data-id="623" class="flex items-center gap-3 pt-4 border-t border-cream-dark">
+                            <div data-id="624" class="w-10 h-10 bg-forest/10 rounded-full flex items-center justify-center">
+                                <i data-id="625" data-lucide="user" class="w-5 h-5 text-forest"></i>
+                            </div>
+                            <div data-id="626">
+                                <p data-id="627" class="font-semibold text-chocolate text-sm">The Thompson Family</p>
+                                <p data-id="628" class="text-chocolate/50 text-xs">Sacramento, CA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div data-id="629" id="testimonial-2-tst2" class="bg-white rounded-2xl p-6 md:p-8 card-hover shadow-sm border border-cream-dark">
+                        <div data-id="630" class="flex gap-1 mb-4">
+                            <i data-id="631" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="632" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="633" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="634" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="635" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                        </div>
+                        <p data-id="636" class="text-chocolate/80 italic leading-relaxed mb-6">"Illy and Raya's puppies are absolutely stunning. The weekly photo updates made the wait so much easier. Our girl Daisy is perfect."</p>
+                        <div data-id="637" class="flex items-center gap-3 pt-4 border-t border-cream-dark">
+                            <div data-id="638" class="w-10 h-10 bg-forest/10 rounded-full flex items-center justify-center">
+                                <i data-id="639" data-lucide="users" class="w-5 h-5 text-forest"></i>
+                            </div>
+                            <div data-id="640">
+                                <p data-id="641" class="font-semibold text-chocolate text-sm">Mike & Jen</p>
+                                <p data-id="642" class="text-chocolate/50 text-xs">Folsom, CA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div data-id="643" id="testimonial-3-tst3" class="bg-white rounded-2xl p-6 md:p-8 card-hover shadow-sm border border-cream-dark">
+                        <div data-id="644" class="flex gap-1 mb-4">
+                            <i data-id="645" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="646" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="647" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="648" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                            <i data-id="649" data-lucide="star" class="w-5 h-5 text-gold fill-current" style="fill: #D4A843;"></i>
+                        </div>
+                        <p data-id="650" class="text-chocolate/80 italic leading-relaxed mb-6">"As first-time Mastiff owners, we had so many questions. K answered every single one and still checks in on our boy today."</p>
+                        <div data-id="651" class="flex items-center gap-3 pt-4 border-t border-cream-dark">
+                            <div data-id="652" class="w-10 h-10 bg-forest/10 rounded-full flex items-center justify-center">
+                                <i data-id="653" data-lucide="heart" class="w-5 h-5 text-forest"></i>
+                            </div>
+                            <div data-id="654">
+                                <p data-id="655" class="font-semibold text-chocolate text-sm">The Garcia Family</p>
+                                <p data-id="656" class="text-chocolate/50 text-xs">Elk Grove, CA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paw Divider -->
+        <div data-id="657" class="paw-divider bg-cream-dark">
+            <span data-id="658" class="paw-print"></span>
+            <span data-id="659" class="paw-print"></span>
+            <span data-id="660" class="paw-print"></span>
+            <span data-id="661" class="paw-print"></span>
+            <span data-id="662" class="paw-print"></span>
+        </div>
+
+        <!-- ===== FAQ SECTION ===== -->
+        <section data-id="663" id="faq" class="bg-cream-dark py-16 md:py-24">
+            <div data-id="664" class="max-w-3xl mx-auto px-4 md:px-6">
+                <div data-id="665" class="text-center mb-12 md:mb-16">
+                    <span data-id="666" class="text-gold font-semibold text-sm tracking-widest uppercase">Questions</span>
+                    <h2 data-id="667" id="faq-title-hd9" class="font-display text-2xl md:text-4xl font-bold text-chocolate mt-2 mb-2">Frequently Asked Questions</h2>
+                    <div data-id="668" class="gold-line mx-auto"></div>
+                </div>
+
+                <div data-id="669" class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div data-id="670" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="671" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="672" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">When can I meet the puppies in person?</span>
+                            <i data-id="673" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="674" class="faq-answer px-5 md:px-6">
+                            <p data-id="675" class="text-chocolate/70 text-sm leading-relaxed pb-5">We welcome visits to the ranch for families on our waitlist once puppies are 5 weeks old and have had their first vet check. This protects the health of the puppies while they're still building their immune systems. We do offer video calls and regular photo/video updates before that time so you can watch your litter grow!</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div data-id="676" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="677" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="678" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">What health testing do you perform on your breeding dogs?</span>
+                            <i data-id="679" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="680" class="faq-answer px-5 md:px-6">
+                            <p data-id="681" class="text-chocolate/70 text-sm leading-relaxed pb-5">All of our breeding dogs undergo comprehensive OFA (Orthopedic Foundation for Animals) health testing, including: Hip Dysplasia evaluation, Elbow Dysplasia evaluation, Cardiac evaluation by a board-certified cardiologist, and Thyroid panel. We also perform DNA testing for breed-specific genetic conditions. All results are publicly available through the OFA database. We believe transparency in health testing is the foundation of responsible breeding.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div data-id="682" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="683" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="684" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">What does my puppy come home with?</span>
+                            <i data-id="685" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="686" class="faq-answer px-5 md:px-6">
+                            <p data-id="687" class="text-chocolate/70 text-sm leading-relaxed pb-5">Every Telstar Farms puppy goes home with: AKC registration papers (limited or full depending on your contract), a comprehensive puppy packet with feeding schedule and care instructions, vet health records including vaccinations and deworming history, a microchip (already registered to you), a starter bag of the food they've been eating, a blanket or toy with their littermates' scent for comfort, our 2-year genetic health guarantee, and a lifetime of support from us. We want the transition to be as smooth as possible for both you and your new puppy.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div data-id="688" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="689" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="690" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">Do you ship puppies?</span>
+                            <i data-id="691" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="692" class="faq-answer px-5 md:px-6">
+                            <p data-id="693" class="text-chocolate/70 text-sm leading-relaxed pb-5">We strongly prefer in-person pickup from our ranch in Dixon, CA. We want to meet every family and ensure the transition is as comfortable as possible for the puppy. However, we understand that not everyone is local. For approved families outside of driving distance, we can arrange a professional pet nanny service at the buyer's expense. We do not cargo ship our puppies under any circumstances.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div data-id="694" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="695" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="696" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">What food do you feed?</span>
+                            <i data-id="697" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="698" class="faq-answer px-5 md:px-6">
+                            <p data-id="699" class="text-chocolate/70 text-sm leading-relaxed pb-5">We feed a high-quality, large-breed-specific kibble and supplement with fresh, whole foods. Proper nutrition is critical for giant breed puppies — they need controlled, slow growth to protect their developing joints and bones. We'll send you home with a detailed feeding guide and a starter supply of the food your puppy has been eating so you can transition gradually if you choose a different brand.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div data-id="700" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="701" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="702" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">Do you require a spay/neuter contract?</span>
+                            <i data-id="703" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="704" class="faq-answer px-5 md:px-6">
+                            <p data-id="705" class="text-chocolate/70 text-sm leading-relaxed pb-5">Yes, all puppies sold on limited (pet) registration are required to be spayed or neutered. However, we follow current veterinary research on giant breeds and do NOT require early spay/neuter. We recommend waiting until your Mastiff is at least 18–24 months old to allow for proper growth and development. The timing will be outlined in your contract and we're happy to discuss the science behind this recommendation.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div data-id="706" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="707" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="708" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">Can I visit the ranch before committing?</span>
+                            <i data-id="709" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="710" class="faq-answer px-5 md:px-6">
+                            <p data-id="711" class="text-chocolate/70 text-sm leading-relaxed pb-5">Absolutely! We encourage potential families to visit our ranch and meet our dogs before placing a deposit. You'll get to see how our dogs live, meet Shaw and Illy and Raya, and get a feel for our program. Just reach out to schedule a visit — we're happy to show you around. We're proud of how we raise our dogs and love sharing that with future families.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div data-id="712" class="faq-item bg-white rounded-xl border border-cream-dark overflow-hidden shadow-sm">
+                        <button data-id="713" class="faq-toggle w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer">
+                            <span data-id="714" class="font-display text-base md:text-lg font-semibold text-chocolate pr-4">What is your health guarantee?</span>
+                            <i data-id="715" data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-gold flex-shrink-0"></i>
+                        </button>
+                        <div data-id="716" class="faq-answer px-5 md:px-6">
+                            <p data-id="717" class="text-chocolate/70 text-sm leading-relaxed pb-5">We offer a comprehensive 2-year genetic health guarantee on all of our puppies. This covers genetic conditions that significantly impact quality of life, including hip dysplasia, elbow dysplasia, and certain cardiac conditions. If your puppy is diagnosed with a covered condition within the guarantee period, we'll work with you on a resolution — which may include a replacement puppy from a future litter or a partial refund, depending on the situation. Full details are outlined in our purchase contract. Your puppy's health and your peace of mind are our top priority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== CONTACT / FOOTER ===== -->
+    <footer data-id="718" id="contact" class="bg-chocolate text-cream">
+        <div data-id="719" class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-20">
+            <div data-id="720" class="grid md:grid-cols-3 gap-10 md:gap-16">
+                <!-- Brand -->
+                <div data-id="721">
+                    <div data-id="722" class="flex items-center gap-3 mb-4">
+                        <svg data-id="723" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle data-id="724" cx="20" cy="20" r="19" stroke="#D4A843" stroke-width="2" fill="none"/>
+                            <text data-id="725" x="20" y="26" text-anchor="middle" fill="#D4A843" font-family="Playfair Display, serif" font-size="16" font-weight="700">K's</text>
+                        </svg>
+                        <h3 data-id="726" class="font-display text-xl font-bold text-cream">Telstar Farms Mastiffs</h3>
+                    </div>
+                    <p data-id="727" class="text-cream/60 text-sm leading-relaxed mb-4 italic font-display">"Raising gentle giants with gentle hands."</p>
+                    <p data-id="728" class="text-cream/50 text-sm leading-relaxed">A family-run English Mastiff breeding program dedicated to producing healthy, well-socialized, breed-standard dogs from our ranch in Dixon, California.</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-id="729">
+                    <h4 data-id="730" class="font-display text-lg font-bold text-gold mb-5">Get In Touch</h4>
+                    <div data-id="731" class="space-y-4">
+                        <div data-id="732" class="flex items-start gap-3">
+                            <i data-id="733" data-lucide="map-pin" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
+                            <span data-id="734" class="text-cream/70 text-sm">Dixon, California</span>
+                        </div>
+                        <div data-id="735" class="flex items-start gap-3">
+                            <i data-id="736" data-lucide="mail" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
+                            <span data-id="737" class="text-cream/70 text-sm">qualitykz@gmail.com</span>
+                        </div>
+                        <div data-id="738" class="flex items-start gap-3">
+                            <i data-id="739" data-lucide="phone" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
+                            <span data-id="740" class="text-cream/70 text-sm">Contact us for phone number</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links & Social -->
+                <div data-id="741">
+                    <h4 data-id="742" class="font-display text-lg font-bold text-gold mb-5">Quick Links</h4>
+                    <div data-id="743" class="space-y-2 mb-6">
+                        <a data-id="744" href="#about" class="block text-cream/60 hover:text-gold text-sm transition-colors no-underline">About Us</a>
+                        <a data-id="745" href="#dogs" class="block text-cream/60 hover:text-gold text-sm transition-colors no-underline">Our Dogs</a>
+                        <a data-id="746" href="#litters" class="block text-cream/60 hover:text-gold text-sm transition-colors no-underline">Litter Info</a>
+                        <a data-id="747" href="#pricing" class="block text-cream/60 hover:text-gold text-sm transition-colors no-underline">Pricing</a>
+                        <a data-id="748" href="#waitlist" class="block text-cream/60 hover:text-gold text-sm transition-colors no-underline">Waitlist</a>
+                        <a data-id="749" href="#faq" class="block text-cream/60 hover:text-gold text-sm transition-colors no-underline">FAQ</a>
+                    </div>
+
+                    <h4 data-id="750" class="font-display text-lg font-bold text-gold mb-3">Follow Us</h4>
+                    <div data-id="751" class="flex gap-3">
+                        <a data-id="752" href="#" class="w-10 h-10 bg-cream/10 hover:bg-gold/20 rounded-full flex items-center justify-center transition-colors no-underline" aria-label="Facebook">
+                            <i data-id="753" data-lucide="facebook" class="w-5 h-5 text-cream"></i>
+                        </a>
+                        <a data-id="754" href="#" class="w-10 h-10 bg-cream/10 hover:bg-gold/20 rounded-full flex items-center justify-center transition-colors no-underline" aria-label="Instagram">
+                            <i data-id="755" data-lucide="instagram" class="w-5 h-5 text-cream"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div data-id="756" class="border-t border-cream/10">
+            <div data-id="757" class="max-w-6xl mx-auto px-4 md:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p data-id="758" class="text-cream/40 text-xs text-center sm:text-left">&copy; 2026 Telstar Farms Mastiffs. All rights reserved. Dixon, CA.</p>
+                <p data-id="759" class="text-cream/40 text-xs">Made by Copilot</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button data-id="760" id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-forest text-cream rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-forest-light transition-all z-40" aria-label="Back to top">
+        <i data-id="761" data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <script>
+        // === Icons (progressive enhancement) ===
+        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+            lucide.createIcons();
+        }
+
+        // === Mobile Menu ===
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn-btn1');
+        const mobileMenu = document.getElementById('mobile-menu-nav2');
+        const mobileMenuClose = document.getElementById('mobile-menu-close-btn2');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+
+            mobileNavLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // === Sticky Header Scroll Effect ===
+        const header = document.getElementById('main-header-hdr1');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // === Back to Top Button ===
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 600) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // === FAQ Accordion ===
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const chevron = this.querySelector('.faq-chevron');
+                const isOpen = answer.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
+                document.querySelectorAll('.faq-chevron').forEach(function(c) { c.classList.remove('open'); });
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    chevron.classList.add('open');
+                }
+            });
+        });
+
+        // === Puppy Filter ===
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const puppyCards = document.querySelectorAll('.puppy-card');
+
+        filterBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+
+                // Update active state
+                filterBtns.forEach(function(b) { b.classList.remove('active', 'bg-forest', 'text-cream'); });
+                this.classList.add('active');
+
+                // Filter cards
+                puppyCards.forEach(function(card) {
+                    if (filter === 'all' || card.dataset.status === filter) {
+                        card.style.display = '';
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(function() {
+                            if (filter !== 'all' && card.dataset.status !== filter) {
+                                card.style.display = 'none';
+                            }
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // === Waitlist Form Validation & Submit ===
+        const form = document.getElementById('waitlist-form-frm2');
+        const formSuccess = document.getElementById('form-success-suc1');
+
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('form-name-inp1').value.trim();
+                const email = document.getElementById('form-email-inp2').value.trim();
+                const phone = document.getElementById('form-phone-inp3').value.trim();
+                const city = document.getElementById('form-city-inp4').value.trim();
+                const sexPref = document.querySelector('input[name="sex-pref"]:checked');
+
+                let errors = [];
+
+                if (!name) errors.push('Please enter your full name.');
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Please enter a valid email address.');
+                if (!phone) errors.push('Please enter your phone number.');
+                if (!city) errors.push('Please enter your city and state.');
+                if (!sexPref) errors.push('Please select a sex preference.');
+
+                if (errors.length > 0) {
+                    alert(errors.join('\n'));
+                    return;
+                }
+
+                // Success
+                form.style.display = 'none';
+                formSuccess.classList.remove('hidden');
+
+                // Re-create icons in success message
+                if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+                    lucide.createIcons();
+                }
+            });
+        }
+
+        // === Smooth scroll for nav links (offset for sticky header) ===
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
